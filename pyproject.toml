@@ -1,0 +1,10 @@
+[project]
+name = "memorybank-modelarmor-202608"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.12"
+dependencies = [
+    "google-adk>=2.7.0",
+    "google-cloud-aiplatform[adk,agent-engines]>=1.164.0",
+    "google-cloud-modelarmor>=0.7.1",
+]
