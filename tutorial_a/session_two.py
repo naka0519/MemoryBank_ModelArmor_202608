@@ -13,7 +13,7 @@ async def main():
         app_name=runner.app_name, user_id=USER_ID)   # 新しいセッション!
     await call_agent(runner, "温度なおして。不快なんだけど", session.id, USER_ID)
     # → 「21度に設定しました」等、聞き返さずに記憶を使えば成功
-    await call_agent(runner, "やっぱり朝はもう少し暖かい方がいい", session.id, USER_ID)
+    await call_agent(runner, "やっぱり25度が好き", session.id, USER_ID)
     # → 既存記憶と統合され「基本21度、朝は暖かめ」に更新されるはず
 
     await asyncio.sleep(3)
