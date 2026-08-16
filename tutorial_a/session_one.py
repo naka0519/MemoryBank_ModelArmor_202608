@@ -14,6 +14,11 @@ async def main():
     await call_agent(runner, "温度を調整して", session.id, USER_ID)      # → 好みを聞き返してくるはず
     await call_agent(runner, "私は21度が快適です", session.id, USER_ID)  # → 記憶が生成されるはず
 
+    # add_session_to_memory() は ingest_events を投げっぱなし(fire-and-forget)で
+    # 呼んでおり、完了を待たない。asyncio.run() はプロセス終了時に未完了タスクを
+    # キャンセルしてしまうため、送信猶予を与えてから終了する。
+    await asyncio.sleep(3)
+
 
 if __name__ == "__main__":
     asyncio.run(main())
